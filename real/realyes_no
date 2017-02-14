@@ -1,0 +1,41 @@
+t2.medium	Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz  	No
+c4.large	Intel Xeon E5-2666 v3 				No
+c4.xlarge	Intel Xeon E5-2666 v3 				No
+
+
+Shell
+sudo wondershaper eth0 200000 200000
+sudo wondershaper eth1 200000 200000
+sudo insmod /mnt/data/mptcp/net/mptcp/mptcp_shift.ko
+sudo sysctl net.mptcp.mptcp_enabled=1
+sudo sysctl net.mptcp.mptcp_path_manager='fullmesh'
+sudo sysctl net.ipv4.tcp_congestion_control='lia' 
+
+
+
+
+Instance type	Core type					Core num	Interfaces num	Protocol	Detail		Throughput	Filedata			Avg
+
+c3.xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	4		1		TCP		200		205 Mbits/sec	c3xlarge_tcp_200.dat		27.9966303	
+c3.xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	4	 	2		MPTCP-lia	200+200		408 Mbits/sec	c3xlarge_mptcp_400.dat		28.8241501667
+c3.xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	4	  	2		MPTCP-lia	300+300		610 Mbits/sec	c3xlarge_mptcp_600.dat		29.2579574333
+Bandwidth Limitation : 700Mbits/sec		
+
+
+c3.2xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	8		1		TCP		200		205 Mbits/sec	c32xlarge_tcp_200.dat		33.185586
+c3.2xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	8		2		MPTCP-lia	200+200		408 Mbits/sec	c32xlarge_mptcp_400.dat		35.7440108667
+c3.2xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	8	 	2		MPTCP-lia	300+300		611 Mbits/sec	c32xlarge_mptcp_600.dat		36.734613
+c3.2xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	8	 	2		MPTCP-lia	400+400		819 Mbits/sec	c32xlarge_mptcp_800.dat		37.6685989333
+c3.2xlarge	Intel(R) Xeon(R) CPU E5-2680 v2 @ 2.80GHz	8	 	2		MPTCP-lia	500+500		1016 Mbits/sec	c32xlarge_mptcp_1000.dat	37.6835775
+
+
+
+r3.2xlarge	Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz	8	 	1		TCP		200		205 Mbits/sec	r32xlarge_tcp_200.dat		28.5522246333
+r3.2xlarge	Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz	8	 	2		MPTCP-lia	200+200		408 Mbits/sec	r32xlarge_mptcp_400.dat		29.6290598667
+r3.2xlarge	Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz	8	   	2		MPTCP-lia	300+300		611 Mbits/sec	r32xlarge_mptcp_600.dat		30.2665008667
+r3.2xlarge	Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz	8	    	2		MPTCP-lia	400+400		819 Mbits/sec	r32xlarge_mptcp_800.dat		31.0437576667
+r3.2xlarge	Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz	8	    	2		MPTCP-lia	500+500		1020 Mbits/sec	r32xlarge_mptcp_1000.dat	31.5337172333
+
+
+
+
